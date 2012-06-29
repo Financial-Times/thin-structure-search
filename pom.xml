@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>thin-structure-search</artifactId>
+	<packaging>jar</packaging>
+	<name>Thin Structure Search Client for Methode</name>
+	<version>1.0-SNAPSHOT</version>
+	<groupId>com.ft.metadata</groupId>
+
+	<build>
+		<finalName>thin-structure-search</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+			</resource>
+			<resource>
+				<directory>src/main/resources-filtered</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
+
+	<dependencies>
+		<!-- Used to talk to the Structure service - could be replaced by pure-URLConnection logic if necessary -->
+		<dependency>
+			<groupId>apache-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
+		
+		<!-- Library used by the existing CND datasource so Jars should be present -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.14</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Library used by the existing CND datasource (and represents Methode's own API) so Jars should be present -->		
+		<dependency>
+			<groupId>verity</groupId>
+			<artifactId>dsm</artifactId>
+			<version>1</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- Test scope so not adding dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.8.5</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

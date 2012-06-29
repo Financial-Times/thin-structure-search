@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<s:searchResponse
+	xmlns:b="http://metadata.internal.ft.com/metadata/xsd/metadata_base_v1.0.xsd"
+	xmlns:p="http://metadata.internal.ft.com/metadata/xsd/metadata_party_v1.0.xsd"
+	xmlns:lc="http://metadata.internal.ft.com/metadata/xsd/metadata_lifecycle_v1.0.xsd"
+	xmlns:tg="http://metadata.internal.ft.com/metadata/xsd/metadata_tag_v1.0.xsd"
+	xmlns:tm="http://metadata.internal.ft.com/metadata/xsd/metadata_term_v1.0.xsd"
+	xmlns:cr="http://metadata.internal.ft.com/metadata/xsd/metadata_content_reference_v1.0.xsd"
+	xmlns:bnd="http://metadata.internal.ft.com/metadata/xsd/metadata_binding_v1.0.xsd"
+	xmlns:pr="http://metadata.internal.ft.com/metadata/xsd/metadata_property_v1.0.xsd"
+	xmlns:tx="http://metadata.internal.ft.com/metadata/xsd/metadata_taxonomy_v1.0.xsd"
+	xmlns:sg="http://metadata.internal.ft.com/metadata/xsd/metadata_suggestion_v1.0.xsd"
+	xmlns:mcr="http://metadata.internal.ft.com/metadata/xsd/metadata_count_response_v1.0.xsd"
+	xmlns:s="http://metadata.internal.ft.com/metadata/xsd/metadata_search_v1.0.xsd"
+	xmlns:cpt="http://metadata.internal.ft.com/metadata/xsd/metadata_concept_v1.0.xsd">
+	<s:searchRequest>
+		<s:query>HSBC*</s:query>
+		<s:searchContext>
+			<s:taxonomy>ON</s:taxonomy>
+		</s:searchContext>
+	</s:searchRequest>
+	<s:responseContext>
+		<s:messages>
+			<s:response s:status="SUCCESS" s:taxonomy="ON">OK</s:response>
+		</s:messages>
+	</s:responseContext>
+	<s:searchResults>
+		<s:taxonomy tx:name="ON" b:id="8">
+			<tx:term tm:status="ACTIVE" tm:externalTermId="400e7f56-2be7-4f4a-8e2e-04c237d8a575"
+				tm:taxonomy="ON" b:id="NDAwZTdmNTYtMmJlNy00ZjRhLThlMmUtMDRjMjM3ZDhhNTc1-T04=">
+				<tm:canonicalName>HICL Infrastructure Co Ltd</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="ft-code-from-cnd">HICLINOT00</tm:attribute>
+					<tm:attribute tm:name="CNDMigrationMethod">FTCode</tm:attribute>
+					<tm:attribute tm:name="cmrStatus">ACTIVE</tm:attribute>
+					<tm:attribute tm:name="ft-wsod-key">uk:HICL</tm:attribute>
+					<tm:attribute tm:name="is-company">Yes</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_146161"
+				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0FGVE1fT05fMTQ2MTYx-T04=">
+				<tm:canonicalName>HSBC Americas Inc.</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="UN">HSBC Americas Inc.</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_146163"
+				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0FGVE1fT05fMTQ2MTYz-T04=">
+				<tm:canonicalName>HSBC Arena</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="UN">HSBC Arena</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_155064"
+				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0FGVE1fT05fMTU1MDY0-T04=">
+				<tm:canonicalName>Hsbc Bamerindus Seguros SA</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="UN">Hsbc Bamerindus Seguros SA</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_146164"
+				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0FGVE1fT05fMTQ2MTY0-T04=">
+				<tm:canonicalName>HSBC Bank Argentina SA</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="UN">HSBC Bank Argentina SA</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_146166"
+				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0FGVE1fT05fMTQ2MTY2-T04=">
+				<tm:canonicalName>HSBC Bank Canada</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="UN">HSBC Bank Canada</tm:attribute>
+					<tm:attribute tm:name="Stock Code(s)">XTSE:HSB.PR.C, XTSE:HSB.PR.D</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_146167"
+				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0FGVE1fT05fMTQ2MTY3-T04=">
+				<tm:canonicalName>HSBC Bank PLC</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="CNDMigrationMethod">CompanyName</tm:attribute>
+					<tm:attribute tm:name="ft-code-from-cnd">HSBCH00014</tm:attribute>
+					<tm:attribute tm:name="cmrStatus">ACTIVE</tm:attribute>
+					<tm:attribute tm:name="UN">HSBC Bank PLC</tm:attribute>
+					<tm:attribute tm:name="is-company">Yes</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_205780"
+				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0FGVE1fT05fMjA1Nzgw-T04=">
+				<tm:canonicalName>HSBC Bank USA Inc</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="ft-code-from-cnd">HSBCH00024</tm:attribute>
+					<tm:attribute tm:name="UN">Marine Midland Bank</tm:attribute>
+					<tm:attribute tm:name="CNDMigrationMethod">FTCode</tm:attribute>
+					<tm:attribute tm:name="is-company">Yes</tm:attribute>
+					<tm:attribute tm:name="cmrStatus">ACTIVE</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_146169"
+				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0FGVE1fT05fMTQ2MTY5-T04=">
+				<tm:canonicalName>HSBC Canada Asset Trust</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="UN">HSBC Canada Asset Trust</tm:attribute>
+					<tm:attribute tm:name="Stock Code(s)">XTSE:HBH.M</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_146170"
+				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0FGVE1fT05fMTQ2MTcw-T04=">
+				<tm:canonicalName>HSBC Gibbs Limited</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="UN">HSBC Gibbs Ltd.</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+			<tx:term tm:status="ACTIVE" tm:externalTermId="eb11fa00-d6df-4ae0-aae2-08acb371f476"
+				tm:taxonomy="ON" b:id="ZWIxMWZhMDAtZDZkZi00YWUwLWFhZTItMDhhY2IzNzFmNDc2-T04=">
+				<tm:canonicalName>HSBC Global Asset Management UK Ltd</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="cmrStatus">ACTIVE</tm:attribute>
+					<tm:attribute tm:name="is-company">Yes</tm:attribute>
+					<tm:attribute tm:name="CNDMigrationMethod">FTCode</tm:attribute>
+					<tm:attribute tm:name="ft-code-from-cnd">HGAMULSL00</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_FortuneCompany_HBC"
+				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0ZvcnR1bmVDb21wYW55X0hCQw==-T04=">
+				<tm:canonicalName>HSBC Holdings PLC</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="ft-code-from-cnd">HSBCH00000</tm:attribute>
+					<tm:attribute tm:name="is-company">Yes</tm:attribute>
+					<tm:attribute tm:name="cmrStatus">ACTIVE</tm:attribute>
+					<tm:attribute tm:name="Stock Code(s)">XNYS:HBC, XLON:HSBA, HKME:005,
+						XPAR:HSB, XBDA:1077223879</tm:attribute>
+					<tm:attribute tm:name="ft-wsod-key">uk:HSBA</tm:attribute>
+					<tm:attribute tm:name="CNDMigrationMethod">FTCode</tm:attribute>
+					<tm:attribute tm:name="UN">HSBC Holdings PLC</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+			<tx:term tm:status="ACTIVE" tm:externalTermId="ba5e8fe3-a26f-472a-89de-6d2ba57d84e2"
+				tm:taxonomy="ON" b:id="YmE1ZThmZTMtYTI2Zi00NzJhLTg5ZGUtNmQyYmE1N2Q4NGUy-T04=">
+				<tm:canonicalName>HSBC Infrastructure Co Ltd</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="CNDMigrationMethod">FTCode</tm:attribute>
+					<tm:attribute tm:name="is-company">Yes</tm:attribute>
+					<tm:attribute tm:name="ft-code-from-cnd">HICLSNOT00</tm:attribute>
+					<tm:attribute tm:name="cmrStatus">ACTIVE</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_146177"
+				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0FGVE1fT05fMTQ2MTc3-T04=">
+				<tm:canonicalName>HSBC Insurance (Asia) Limited</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="UN">HSBC Insurance (Asia) Ltd.</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_146179"
+				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0FGVE1fT05fMTQ2MTc5-T04=">
+				<tm:canonicalName>HSBC Insurance Limited</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="UN">HSBC Insurance Ltd.</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_146181"
+				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0FGVE1fT05fMTQ2MTgx-T04=">
+				<tm:canonicalName>HSBC Investment Bank Limited</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="UN">HSBC Investment Bank Ltd.</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_155068"
+				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0FGVE1fT05fMTU1MDY4-T04=">
+				<tm:canonicalName>Hsbc Leasing Arrend. Merc.(brasil) SA</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="UN">Hsbc Leasing Arrend.
+						Merc.(brasil) SA</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_146183"
+				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0FGVE1fT05fMTQ2MTgz-T04=">
+				<tm:canonicalName>HSBC Life (International) Limited</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="UN">HSBC Life (International) Ltd.</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_146185"
+				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0FGVE1fT05fMTQ2MTg1-T04=">
+				<tm:canonicalName>HSBC Medial Insurance Limited</tm:canonicalName>
+				<tm:attributes>
+					<tm:attribute tm:name="UN">HSBC Medial Insurance Ltd.</tm:attribute>
+				</tm:attributes>
+			</tx:term>
+		</s:taxonomy>
+	</s:searchResults>
+</s:searchResponse>
