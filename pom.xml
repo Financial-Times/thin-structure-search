@@ -6,8 +6,13 @@
 	<packaging>jar</packaging>
 	<name>Thin Structure Search Client for Methode</name>
 	<version>1.0-SNAPSHOT</version>
-	<groupId>com.ft.metadata</groupId>
 
+	<parent>
+		<groupId>com.ft.metadata</groupId>
+		<artifactId>ft-metadata-parent</artifactId>
+		<version>1.13</version>
+	</parent>
+	
 	<properties>
 		<jdkVersion>1.6</jdkVersion>
 	</properties>
