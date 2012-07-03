@@ -11,12 +11,12 @@ import com.eidosmedia.datasource.ResourceIterator;
 public class OnTaxonomyTermResourceIterator implements ResourceIterator {
 	private final List<OnTaxonomyTerm> terms;
 	private int index = -1;
-	
+
 	public OnTaxonomyTermResourceIterator(final List<OnTaxonomyTerm> terms) {
 		this.terms = terms;
 	}
 
-	public Resource next() throws DSException {		
+	public Resource next() throws DSException {
 		if(isInRange(++index)) {
 			return terms.get(index);
 		}
@@ -34,8 +34,8 @@ public class OnTaxonomyTermResourceIterator implements ResourceIterator {
 	public int size() throws DSException {
 		return terms.size();
 	}
-	
+
 	private boolean isInRange(final int index) {
-		return index >= 0 && index <= terms.size();
+		return index >= 0 && index < terms.size();
 	}
 }

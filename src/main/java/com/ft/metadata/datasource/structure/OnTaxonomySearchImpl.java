@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -40,11 +41,16 @@ public class OnTaxonomySearchImpl implements OnTaxonomySearch {
 					"<search:searchContext>"+
 					"<search:taxonomy>ON</search:taxonomy>"+
 					"</search:searchContext>"+
-				"</search:searchRequest>"; 	
+				"</search:searchRequest>";
 	// @formatter:on
 
 	private final OnTaxonomyDataSource dataSource;
-	
+	private static final Map<String, String> substitutes = new LinkedHashMap<String, String>();
+	static{
+		substitutes.put("&", "&amp;");
+		substitutes.put("<", "&lt;");
+	}
+
 	public OnTaxonomySearchImpl(final OnTaxonomyDataSource dataSource) {
 		this.dataSource = dataSource;
 	}
@@ -89,9 +95,14 @@ public class OnTaxonomySearchImpl implements OnTaxonomySearch {
 		final boolean active = cmrStatus != null ? "ACTIVE".equalsIgnoreCase(cmrStatus.trim()) : false;
 		final String isCompany = attributes.get("is-company");
 		final boolean company = isCompany != null ? "Yes".equalsIgnoreCase(isCompany.trim()) : false;
-		final String ftWsodKey = attributes.get("ft-wsod-key");
-		final String ftCodeFromCnd = attributes.get("ft-code-from-cnd");
-		return (company && active) ? new OnTaxonomyTerm(canonicalName, externalTermId, ftWsodKey, ftCodeFromCnd, company, active) : null;
+		if (company && active) {
+			return new OnTaxonomyTerm.Builder().ftWsodKey(attributes.get("ft-wsod-key"))
+					.ftCndCode(attributes.get("ft-code-from-cnd")).sedol(attributes.get("sedol"))
+					.tickerSymbol(attributes.get("ticker-symbol")).country(attributes.get("country"))
+					.type(attributes.get("Type")).canonicalName(canonicalName)
+					.exchangeCountry(attributes.get("exchange-country")).build();
+		}
+		return null;
 	}
 
 	private static Map<String, String> mapAttributes(final NodeList termAttributes) {
@@ -138,8 +149,9 @@ public class OnTaxonomySearchImpl implements OnTaxonomySearch {
 	}
 
 	private static String escapeForXml(final String content) {
-		
-		// TODO:
+		for (final Map.Entry<String, String> subs : substitutes.entrySet()){
+			content.replaceAll(subs.getKey(), subs.getValue());
+		}
 		return content;
 	}
 }

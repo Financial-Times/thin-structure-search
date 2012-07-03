@@ -37,7 +37,10 @@ public class OnTaxonomyDataSource implements Datasource {
 	private final String password;
 	private final String principal;
 
-	public OnTaxonomyDataSource(final Map<String, String> params) {		
+	private Map<String, String> initParam;
+
+	public OnTaxonomyDataSource(final Map<String, String> params) {
+		initParam = params;
 		this.realm = params.get(REALM_PARAM);
 		this.host = params.get(HOST_PARAM);
 		this.username = params.get(USERNAME_PARAM);
@@ -60,14 +63,19 @@ public class OnTaxonomyDataSource implements Datasource {
 		state.setCredentials(scope, credentials);
 		return state;
 	}
-	
+
 	public PostMethod createRequest() throws UnsupportedEncodingException {
 		final PostMethod post = new PostMethod(String.format(STRUCTURE_SERVICE_URI_TEMPLATE, host, port));
 		post.addRequestHeader(CLIENT_USER_PRINCIPAL_HEADER, principal);
 		return post;
 	}
-	
+
 	public HttpClient getClient() {
 		return client;
 	}
+
+	public Map<String, String> getInitParams()
+    {
+        return initParam;
+    }
 }
