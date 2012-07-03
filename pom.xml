@@ -13,7 +13,7 @@
 	</properties>
 
 	<build>
-		<finalName>thin-structure-search</finalName>
+		<finalName>ft-metadata-thin-structure-search</finalName>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
