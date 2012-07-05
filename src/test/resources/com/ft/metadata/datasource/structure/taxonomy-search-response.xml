@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<s:searchResponse
-	xmlns:b="http://metadata.internal.ft.com/metadata/xsd/metadata_base_v1.0.xsd"
-	xmlns:p="http://metadata.internal.ft.com/metadata/xsd/metadata_party_v1.0.xsd"
-	xmlns:lc="http://metadata.internal.ft.com/metadata/xsd/metadata_lifecycle_v1.0.xsd"
-	xmlns:tg="http://metadata.internal.ft.com/metadata/xsd/metadata_tag_v1.0.xsd"
-	xmlns:tm="http://metadata.internal.ft.com/metadata/xsd/metadata_term_v1.0.xsd"
-	xmlns:cr="http://metadata.internal.ft.com/metadata/xsd/metadata_content_reference_v1.0.xsd"
-	xmlns:bnd="http://metadata.internal.ft.com/metadata/xsd/metadata_binding_v1.0.xsd"
-	xmlns:pr="http://metadata.internal.ft.com/metadata/xsd/metadata_property_v1.0.xsd"
-	xmlns:tx="http://metadata.internal.ft.com/metadata/xsd/metadata_taxonomy_v1.0.xsd"
-	xmlns:sg="http://metadata.internal.ft.com/metadata/xsd/metadata_suggestion_v1.0.xsd"
-	xmlns:mcr="http://metadata.internal.ft.com/metadata/xsd/metadata_count_response_v1.0.xsd"
-	xmlns:s="http://metadata.internal.ft.com/metadata/xsd/metadata_search_v1.0.xsd"
-	xmlns:cpt="http://metadata.internal.ft.com/metadata/xsd/metadata_concept_v1.0.xsd">
+<s:searchResponse>
 	<s:searchRequest>
-		<s:query>HSBC*</s:query>
+		<s:query>*HSBC*</s:query>
 		<s:searchContext>
 			<s:taxonomy>ON</s:taxonomy>
 		</s:searchContext>
@@ -30,11 +17,15 @@
 				tm:taxonomy="ON" b:id="NDAwZTdmNTYtMmJlNy00ZjRhLThlMmUtMDRjMjM3ZDhhNTc1-T04=">
 				<tm:canonicalName>HICL Infrastructure Co Ltd</tm:canonicalName>
 				<tm:attributes>
-					<tm:attribute tm:name="ft-code-from-cnd">HICLINOT00</tm:attribute>
-					<tm:attribute tm:name="CNDMigrationMethod">FTCode</tm:attribute>
-					<tm:attribute tm:name="cmrStatus">ACTIVE</tm:attribute>
+					<tm:attribute tm:name="exchange-country">uk</tm:attribute>
 					<tm:attribute tm:name="ft-wsod-key">uk:HICL</tm:attribute>
+					<tm:attribute tm:name="ticker-symbol">HICL</tm:attribute>
 					<tm:attribute tm:name="is-company">Yes</tm:attribute>
+					<tm:attribute tm:name="CNDMigrationMethod">FTCode</tm:attribute>
+					<tm:attribute tm:name="sedol">B0T4LH6</tm:attribute>
+					<tm:attribute tm:name="country">United Kingdom</tm:attribute>
+					<tm:attribute tm:name="ft-code-from-cnd">HICLINOT00</tm:attribute>
+					<tm:attribute tm:name="cmrStatus">ACTIVE</tm:attribute>
 				</tm:attributes>
 			</tx:term>
 			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_146161"
@@ -69,30 +60,32 @@
 				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0FGVE1fT05fMTQ2MTY2-T04=">
 				<tm:canonicalName>HSBC Bank Canada</tm:canonicalName>
 				<tm:attributes>
-					<tm:attribute tm:name="UN">HSBC Bank Canada</tm:attribute>
 					<tm:attribute tm:name="Stock Code(s)">XTSE:HSB.PR.C, XTSE:HSB.PR.D</tm:attribute>
+					<tm:attribute tm:name="UN">HSBC Bank Canada</tm:attribute>
 				</tm:attributes>
 			</tx:term>
 			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_146167"
 				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0FGVE1fT05fMTQ2MTY3-T04=">
 				<tm:canonicalName>HSBC Bank PLC</tm:canonicalName>
 				<tm:attributes>
-					<tm:attribute tm:name="CNDMigrationMethod">CompanyName</tm:attribute>
-					<tm:attribute tm:name="ft-code-from-cnd">HSBCH00014</tm:attribute>
-					<tm:attribute tm:name="cmrStatus">ACTIVE</tm:attribute>
 					<tm:attribute tm:name="UN">HSBC Bank PLC</tm:attribute>
+					<tm:attribute tm:name="ft-code-from-cnd">HSBCH00014</tm:attribute>
+					<tm:attribute tm:name="country">United Kingdom</tm:attribute>
 					<tm:attribute tm:name="is-company">Yes</tm:attribute>
+					<tm:attribute tm:name="CNDMigrationMethod">FTCode</tm:attribute>
+					<tm:attribute tm:name="cmrStatus">ACTIVE</tm:attribute>
 				</tm:attributes>
 			</tx:term>
 			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_205780"
 				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0FGVE1fT05fMjA1Nzgw-T04=">
 				<tm:canonicalName>HSBC Bank USA Inc</tm:canonicalName>
 				<tm:attributes>
-					<tm:attribute tm:name="ft-code-from-cnd">HSBCH00024</tm:attribute>
+					<tm:attribute tm:name="country">United States of America</tm:attribute>
+					<tm:attribute tm:name="cmrStatus">ACTIVE</tm:attribute>
+					<tm:attribute tm:name="is-company">Yes</tm:attribute>
 					<tm:attribute tm:name="UN">Marine Midland Bank</tm:attribute>
 					<tm:attribute tm:name="CNDMigrationMethod">FTCode</tm:attribute>
-					<tm:attribute tm:name="is-company">Yes</tm:attribute>
-					<tm:attribute tm:name="cmrStatus">ACTIVE</tm:attribute>
+					<tm:attribute tm:name="ft-code-from-cnd">HSBCH00024</tm:attribute>
 				</tm:attributes>
 			</tx:term>
 			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_AFTM_ON_146169"
@@ -114,24 +107,30 @@
 				tm:taxonomy="ON" b:id="ZWIxMWZhMDAtZDZkZi00YWUwLWFhZTItMDhhY2IzNzFmNDc2-T04=">
 				<tm:canonicalName>HSBC Global Asset Management UK Ltd</tm:canonicalName>
 				<tm:attributes>
+					<tm:attribute tm:name="ft-code-from-cnd">HGAMULSL00</tm:attribute>
 					<tm:attribute tm:name="cmrStatus">ACTIVE</tm:attribute>
+					<tm:attribute tm:name="country">United Kingdom</tm:attribute>
 					<tm:attribute tm:name="is-company">Yes</tm:attribute>
 					<tm:attribute tm:name="CNDMigrationMethod">FTCode</tm:attribute>
-					<tm:attribute tm:name="ft-code-from-cnd">HGAMULSL00</tm:attribute>
 				</tm:attributes>
 			</tx:term>
 			<tx:term tm:status="ACTIVE" tm:externalTermId="Nstein_ON_FortuneCompany_HBC"
 				tm:taxonomy="ON" b:id="TnN0ZWluX09OX0ZvcnR1bmVDb21wYW55X0hCQw==-T04=">
 				<tm:canonicalName>HSBC Holdings PLC</tm:canonicalName>
 				<tm:attributes>
-					<tm:attribute tm:name="ft-code-from-cnd">HSBCH00000</tm:attribute>
 					<tm:attribute tm:name="is-company">Yes</tm:attribute>
+					<tm:attribute tm:name="exchange-country">uk</tm:attribute>
+					<tm:attribute tm:name="Stock Code(s)">
+						XNYS:HBC, XLON:HSBA, HKME:005, XPAR:HSB, XBDA:1077223879
+					</tm:attribute>
+					<tm:attribute tm:name="ft-code-from-cnd">HSBCH00000</tm:attribute>
 					<tm:attribute tm:name="cmrStatus">ACTIVE</tm:attribute>
-					<tm:attribute tm:name="Stock Code(s)">XNYS:HBC, XLON:HSBA, HKME:005,
-						XPAR:HSB, XBDA:1077223879</tm:attribute>
 					<tm:attribute tm:name="ft-wsod-key">uk:HSBA</tm:attribute>
+					<tm:attribute tm:name="sedol">0540528</tm:attribute>
 					<tm:attribute tm:name="CNDMigrationMethod">FTCode</tm:attribute>
+					<tm:attribute tm:name="ticker-symbol">HSBA</tm:attribute>
 					<tm:attribute tm:name="UN">HSBC Holdings PLC</tm:attribute>
+					<tm:attribute tm:name="country">United Kingdom</tm:attribute>
 				</tm:attributes>
 			</tx:term>
 			<tx:term tm:status="ACTIVE" tm:externalTermId="ba5e8fe3-a26f-472a-89de-6d2ba57d84e2"
@@ -141,6 +140,8 @@
 					<tm:attribute tm:name="CNDMigrationMethod">FTCode</tm:attribute>
 					<tm:attribute tm:name="is-company">Yes</tm:attribute>
 					<tm:attribute tm:name="ft-code-from-cnd">HICLSNOT00</tm:attribute>
+					<tm:attribute tm:name="country">United Kingdom</tm:attribute>
+					<tm:attribute tm:name="sedol">B58PY21</tm:attribute>
 					<tm:attribute tm:name="cmrStatus">ACTIVE</tm:attribute>
 				</tm:attributes>
 			</tx:term>

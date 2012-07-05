@@ -3,6 +3,7 @@ package com.ft.metadata.datasource.structure;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 import com.eidosmedia.datasource.Collection;
 import com.eidosmedia.datasource.DSException;
@@ -67,7 +68,7 @@ public class OnTaxonomyCollection implements Collection {
 
 	private String convertInputStreamToString(InputStream is) {
 	    try {
-	        return new java.util.Scanner(is).useDelimiter("\\A").next();
+	        return new Scanner(is).useDelimiter("\\A").next();
 	    } catch (java.util.NoSuchElementException e) {
 	        return "";
 	    }

@@ -86,22 +86,21 @@ public class OnTaxonomyCollectionTest {
 		for (int i = 0; i < nList.getLength(); i++) {
 			Node nNode = nList.item(i);
 			Element eElement = (Element) nNode;
-			String wsodKey = getValue("wsodKey", eElement);
-			String ftCode = getValue("FTCode", eElement);
-			String sedol = getValue("SEDOL", eElement);
-			String tickerSymbol = getValue("Ticker", eElement);
-			String country = getValue("Country", eElement);
-			String name = getValue("Name", eElement);
-			String exchangeCountry = getValue("Exchange-Country", eElement);
+			String wsodKey = getValueFromNode("wsodKey", eElement);
+			String ftCode = getValueFromNode("FTCode", eElement);
+			String sedol = getValueFromNode("SEDOL", eElement);
+			String tickerSymbol = getValueFromNode("Ticker", eElement);
+			String country = getValueFromNode("Country", eElement);
+			String name = getValueFromNode("Name", eElement);
+			String exchangeCountry = getValueFromNode("Exchange-Country", eElement);
 			terms.add(new OnTaxonomyTerm.Builder().ftWsodKey(wsodKey).ftCndCode(ftCode).sedol(sedol)
 					.tickerSymbol(tickerSymbol).country(country).canonicalName(name).exchangeCountry(exchangeCountry)
 					.build());
 		}
 		return terms;
-
 	}
 
-	private String getValue(String tag, Element element) {
+	private String getValueFromNode(String tag, Element element) {
 		Node node = element.getElementsByTagName(tag).item(0);
 		if (node != null) {
 			NodeList nlList = node.getChildNodes();

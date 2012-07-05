@@ -1,0 +1,70 @@
+<ds>
+    <!-- The info element could be coded into the implementation of the Collection interface.
+EidosMedia dictates the structure of this element.  Refer to getInfo() method
+for the Collection interface in the com.eidosmedia.datasource javadoc. -->
+    <source name="companies">
+        <info>
+            <fields>
+                <field>
+                    <name>Name</name>
+                    <data>cnd-name</data>
+                </field>
+                <field>
+                    <name>Country</name>
+                    <data>cnd-country</data>
+                </field>
+                <field>
+                    <name>Ticker</name>
+                    <data>ticker-symbol</data>
+                </field>
+                <field>
+                    <name>Type</name>
+                    <data>cnd-coflag</data>
+                </field>
+                <field>
+                    <name>Status</name>
+                    <data>cnd-status</data>
+                </field>
+                <field>
+                    <name>SEDOL</name>
+                    <data>cnd-sedol</data>
+                </field>
+                <field>
+                    <name>ISIN</name>
+                    <data>cnd-isin</data>
+                </field>
+                <field>
+                    <name>FTCode</name>
+                    <data>cnd-no</data>
+                </field>
+                <field>
+                    <name>Symbol</name>
+                    <data>ticker-symbol</data>
+                </field>
+                <field>
+                    <name>Exchange-Code</name>
+                    <data></data>
+                </field>
+                <field>
+                    <name>Exchange-Country</name>
+                    <data>ticker-symbol</data>
+                </field>
+                <field>
+                    <name>Version</name>
+                    <data></data>
+                </field>
+            </fields>
+            <queryFields>
+                <queryField>
+                    <name>name</name>
+                    <displayName>Company</displayName>
+                    <operator>in</operator>
+                </queryField>
+            </queryFields>
+        </info>
+        <!-- The mapping element declares the class type to map results too. -->
+        <mapping>
+            <beanClass>com.ft.methode.datasource.company.CNDBean</beanClass>
+        </mapping>
+    </source>
+</ds>
