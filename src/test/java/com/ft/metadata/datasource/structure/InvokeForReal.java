@@ -16,8 +16,8 @@ public class InvokeForReal {
 		params.put(OnTaxonomyDataSource.REALM_PARAM, "Metadata Services");
 		params.put(OnTaxonomyDataSource.HOST_PARAM,"metadata.internal.ft.com");
 		params.put(OnTaxonomyDataSource.PORT_PARAM,"83");
-		params.put(OnTaxonomyDataSource.USERNAME_PARAM,"metadata-qmi");
-		params.put(OnTaxonomyDataSource.PASSWORD_PARAM,"metadanger");
+		params.put(OnTaxonomyDataSource.USERNAME_PARAM,"metadata-methode");
+		params.put(OnTaxonomyDataSource.PASSWORD_PARAM,"datasource");
 		params.put(OnTaxonomyDataSource.PRINCIPAL_PARAM,"methode");
 
 		final OnTaxonomyDataSourceManager manager = new OnTaxonomyDataSourceManager();
