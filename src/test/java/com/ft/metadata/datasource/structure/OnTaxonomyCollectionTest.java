@@ -9,7 +9,6 @@ import static org.mockito.Mockito.when;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -17,7 +16,6 @@ import java.util.Scanner;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.httpclient.HostConfiguration;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpState;
@@ -115,17 +113,6 @@ public class OnTaxonomyCollectionTest {
 		}
 
 		return null;
-	}
-
-	private static String buildCompositeTermId(final String externalTermId, final String taxonomy) throws OnTaxonomySearchException {
-		try {
-			return new StringBuffer().append(new String(Base64.encodeBase64(taxonomy.getBytes("UTF-8")))).
-			append("-").
-			append(new String(Base64.encodeBase64(taxonomy.getBytes("UTF-8")))).toString();
-		}
-		catch (UnsupportedEncodingException e) {
-			throw new OnTaxonomySearchException(String.format("composite term id build failed for externalTermId %s and taxonomy %s ", externalTermId,  taxonomy));
-		}
 	}
 
 	private static String readContent(final String filename) throws IOException {
