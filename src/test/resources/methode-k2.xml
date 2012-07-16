@@ -53,6 +53,10 @@ for the Collection interface in the com.eidosmedia.datasource javadoc. -->
                     <name>Version</name>
                     <data></data>
                 </field>
+                 <field>
+                    <name>Composite-Id</name>
+                    <data></data>
+                </field>
             </fields>
             <queryFields>
                 <queryField>

@@ -9,6 +9,7 @@ import static org.mockito.Mockito.when;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -16,6 +17,7 @@ import java.util.Scanner;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.httpclient.HostConfiguration;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpState;
@@ -66,8 +68,9 @@ public class OnTaxonomyCollectionTest {
 		assertEquals(onTaxonomyTerm.get(0).getSedol(), "B0T4LH6");
 		assertEquals(onTaxonomyTerm.get(0).getCanonicalName(), "HICL Infrastructure Co Ltd");
 		assertEquals(onTaxonomyTerm.get(0).getCountry(), "United Kingdom");
-		assertEquals(onTaxonomyTerm.get(0).getTickerSymbol(), "HICL");
+		assertEquals(onTaxonomyTerm.get(0).getTickerSymbol(), "uk:HICL");
 		assertEquals(onTaxonomyTerm.get(0).getExchangeCountry(), "uk");
+		assertEquals(onTaxonomyTerm.get(0).getCompositeId(), "NDAwZTdmNTYtMmJlNy00ZjRhLThlMmUtMDRjMjM3ZDhhNTc1-T04=");
 	}
 
 	private List<OnTaxonomyTerm> buildTermsFromXml(String xml) throws Exception {
@@ -92,8 +95,9 @@ public class OnTaxonomyCollectionTest {
 			String tickerSymbol = getValueFromNode("Ticker", eElement);
 			String country = getValueFromNode("Country", eElement);
 			String name = getValueFromNode("Name", eElement);
+			String compositeId = getValueFromNode("Composite-Id", eElement);
 			String exchangeCountry = getValueFromNode("Exchange-Country", eElement);
-			terms.add(new OnTaxonomyTerm.Builder().ftWsodKey(wsodKey).ftCndCode(ftCode).sedol(sedol)
+			terms.add(new OnTaxonomyTerm.Builder().ftWsodKey(wsodKey).ftCndCode(ftCode).sedol(sedol).compositeId(compositeId)
 					.tickerSymbol(tickerSymbol).country(country).canonicalName(name).exchangeCountry(exchangeCountry)
 					.build());
 		}
@@ -111,6 +115,17 @@ public class OnTaxonomyCollectionTest {
 		}
 
 		return null;
+	}
+
+	private static String buildCompositeTermId(final String externalTermId, final String taxonomy) throws OnTaxonomySearchException {
+		try {
+			return new StringBuffer().append(new String(Base64.encodeBase64(taxonomy.getBytes("UTF-8")))).
+			append("-").
+			append(new String(Base64.encodeBase64(taxonomy.getBytes("UTF-8")))).toString();
+		}
+		catch (UnsupportedEncodingException e) {
+			throw new OnTaxonomySearchException(String.format("composite term id build failed for externalTermId %s and taxonomy %s ", externalTermId,  taxonomy));
+		}
 	}
 
 	private static String readContent(final String filename) throws IOException {

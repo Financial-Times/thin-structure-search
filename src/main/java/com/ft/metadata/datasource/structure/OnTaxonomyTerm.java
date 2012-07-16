@@ -23,6 +23,7 @@ public class OnTaxonomyTerm implements Resource {
 	private static final String EXCHANGE_CODE_TEMPLATE = "<Exchange-Code>%s</Exchange-Code>";
 	private static final String EXCHANGE_COUNTRY_TEMPLATE = "<Exchange-Country>%s</Exchange-Country>";
 	private static final String VERSION_TEMPLATE = "<Version>%s</Version>";
+	private static final String COMPOSITE_ID = "<Composite-Id>%s</Composite-Id>";
 
 	private static final String CANONICAL_NAME_EMPTY = "<Name/>";
 	private static final String EXTERNAL_ID_EMPTY = "<externalId/>";
@@ -39,6 +40,7 @@ public class OnTaxonomyTerm implements Resource {
 	private static final String EXCHANGE_CODE_EMPTY = "<Exchange-Code/>";
 	private static final String EXCHANGE_COUNTRY_EMPTY = "<Exchange-Country/>";
 	private static final String VERSION_EMPTY = "<Version/>";
+	private static final String COMPOSITE_ID_EMPTY = "<Composite-Id/>";
 
 	private static final String UTF8 = "UTF-8";
 	private boolean company;
@@ -56,6 +58,7 @@ public class OnTaxonomyTerm implements Resource {
 	private String exchangeCode;
 	private String exchangeCountry;
 	private String version;
+	private String compositeId;
 
 	private OnTaxonomyTerm(Builder builder) {
 		this.canonicalName = builder.canonicalName;
@@ -73,6 +76,7 @@ public class OnTaxonomyTerm implements Resource {
 		this.exchangeCode = builder.exchangeCode;
 		this.exchangeCountry = builder.exchangeCountry;
 		this.version = builder.version;
+		this.compositeId = builder.compositeId;
 	}
 
 	public String getCanonicalName() {
@@ -136,6 +140,10 @@ public class OnTaxonomyTerm implements Resource {
 	}
 
 
+	public String getCompositeId() {
+		return compositeId;
+	}
+
 	@Override
 	public String toString() {
 		return "OnTaxonomyTerm [canonicalName=" + canonicalName + ", externalTermId=" + externalTermId + ", ftWsodKey="
@@ -174,6 +182,7 @@ public class OnTaxonomyTerm implements Resource {
 		append(response,EXCHANGE_CODE_TEMPLATE,EXCHANGE_CODE_EMPTY,exchangeCode);
 		append(response,EXCHANGE_COUNTRY_TEMPLATE,EXCHANGE_COUNTRY_EMPTY,exchangeCountry);
 		append(response,VERSION_TEMPLATE,VERSION_EMPTY,version);
+		append(response, COMPOSITE_ID, COMPOSITE_ID_EMPTY, compositeId);
 
 		return response.toString();
 	}
@@ -203,6 +212,7 @@ public class OnTaxonomyTerm implements Resource {
 		private String exchangeCode;
 		private String exchangeCountry;
 		private String version;
+		private String compositeId;
 
 		public Builder company(final boolean company){
 			this.company = company;
@@ -276,6 +286,11 @@ public class OnTaxonomyTerm implements Resource {
 
 		public Builder version(final String version){
 			this.version = version;
+			return this;
+		}
+
+		public Builder compositeId(final String compositeId){
+			this.compositeId = compositeId;
 			return this;
 		}
 
