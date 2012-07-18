@@ -14,7 +14,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.httpclient.HostConfiguration;
 import org.apache.commons.httpclient.HttpException;
 import org.apache.commons.httpclient.HttpState;
@@ -31,7 +30,6 @@ import org.xml.sax.SAXException;
 public class OnTaxonomySearchImpl implements OnTaxonomySearch {
 	private static final String APPLICATION_XML = "application/xml";
 	private static final String UTF8 = "UTF-8";
-	private static final String COMPOSITE_ID_DELIMITER = "-";
 
 	// @formatter:off
 	private static final String CONTENT_WITH_PLACEHOLDER =
@@ -75,8 +73,8 @@ public class OnTaxonomySearchImpl implements OnTaxonomySearch {
 				final String externalTermId = termNode.getAttribute("tm:externalTermId");
 				final NodeList canonicalNames = termNode.getElementsByTagName("tm:canonicalName");
 				final NodeList termAttributes = termNode.getElementsByTagName("tm:attribute");
-				final String taxonomy = termNode.getAttribute("tm:taxonomy");
-				final OnTaxonomyTerm term = createTerm(externalTermId, canonicalNames, termAttributes, taxonomy);
+				final String compositeId = termNode.getAttribute("b:id");
+				final OnTaxonomyTerm term = createTerm(externalTermId, canonicalNames, termAttributes, compositeId);
 				if (term != null) {
 					terms.add(term);
 				}
@@ -91,9 +89,8 @@ public class OnTaxonomySearchImpl implements OnTaxonomySearch {
 		}
 	}
 
-	private static OnTaxonomyTerm createTerm(final String externalTermId, final NodeList canonicalNames, final NodeList termAttributes, final String taxonomy) throws OnTaxonomySearchException {
+	private static OnTaxonomyTerm createTerm(final String externalTermId, final NodeList canonicalNames, final NodeList termAttributes, final String compositeId) throws OnTaxonomySearchException {
 		final String canonicalName = extractCanonicalName(externalTermId,canonicalNames);
-		final String compositeId = buildCompositeTermId(taxonomy, externalTermId);
 		final Map<String, String> attributes = mapAttributes(termAttributes);
 		final String cmrStatus = attributes.get("cmrStatus");
 		final boolean active = cmrStatus != null ? "ACTIVE".equalsIgnoreCase(cmrStatus.trim()) : false;
@@ -102,8 +99,9 @@ public class OnTaxonomySearchImpl implements OnTaxonomySearch {
 		if (company && active) {
 			return new OnTaxonomyTerm.Builder().ftWsodKey(attributes.get("ft-wsod-key"))
 					.ftCndCode(attributes.get("ft-code-from-cnd")).sedol(attributes.get("sedol"))
-					.tickerSymbol(attributes.get("ft-wsod-key")).country(attributes.get("country"))
-					.type(attributes.get("Type")).canonicalName(canonicalName).compositeId(compositeId)
+					.tickerSymbol(attributes.get("ticker-symbol")).country(attributes.get("country"))
+					.tickerCode(attributes.get("ft-wsod-key")).type(attributes.get("Type"))
+					.canonicalName(canonicalName).compositeId(compositeId)
 					.exchangeCountry(attributes.get("exchange-country")).build();
 		}
 		return null;
@@ -124,21 +122,6 @@ public class OnTaxonomySearchImpl implements OnTaxonomySearch {
 		} else {
 			throw new OnTaxonomySearchException("No canonical name for term " + externalTermId);
 		}
-	}
-
-	private static String buildCompositeTermId(final String externalTermId, final String taxonomy) throws OnTaxonomySearchException {
-		try {
-			return new StringBuffer().append(encodeString(taxonomy)).
-			append(COMPOSITE_ID_DELIMITER).
-			append(encodeString(externalTermId)).toString();
-		}
-		catch (UnsupportedEncodingException e) {
-			throw new OnTaxonomySearchException(String.format("composite term id build failed for externalTermId %s and taxonomy %s ", externalTermId,  taxonomy));
-		}
-	}
-
-	private static String encodeString(String text) throws UnsupportedEncodingException{
-		return new String(Base64.encodeBase64(text.getBytes("UTF-8")));
 	}
 
 	public List<OnTaxonomyTerm> search(final String query) throws OnTaxonomySearchException {

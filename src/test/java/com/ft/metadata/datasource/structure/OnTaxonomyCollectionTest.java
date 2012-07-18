@@ -66,7 +66,8 @@ public class OnTaxonomyCollectionTest {
 		assertEquals(onTaxonomyTerm.get(0).getSedol(), "B0T4LH6");
 		assertEquals(onTaxonomyTerm.get(0).getCanonicalName(), "HICL Infrastructure Co Ltd");
 		assertEquals(onTaxonomyTerm.get(0).getCountry(), "United Kingdom");
-		assertEquals(onTaxonomyTerm.get(0).getTickerSymbol(), "uk:HICL");
+		assertEquals(onTaxonomyTerm.get(0).getTickerSymbol(), "HICL");
+		assertEquals(onTaxonomyTerm.get(0).getTickerCode(), "uk:HICL");
 		assertEquals(onTaxonomyTerm.get(0).getExchangeCountry(), "uk");
 		assertEquals(onTaxonomyTerm.get(0).getCompositeId(), "NDAwZTdmNTYtMmJlNy00ZjRhLThlMmUtMDRjMjM3ZDhhNTc1-T04=");
 	}
@@ -90,13 +91,14 @@ public class OnTaxonomyCollectionTest {
 			String wsodKey = getValueFromNode("wsodKey", eElement);
 			String ftCode = getValueFromNode("FTCode", eElement);
 			String sedol = getValueFromNode("SEDOL", eElement);
-			String tickerSymbol = getValueFromNode("Ticker", eElement);
+			String tickerCode = getValueFromNode("Ticker", eElement);
 			String country = getValueFromNode("Country", eElement);
 			String name = getValueFromNode("Name", eElement);
 			String compositeId = getValueFromNode("Composite-Id", eElement);
 			String exchangeCountry = getValueFromNode("Exchange-Country", eElement);
+			String tickerSymbol = getValueFromNode("Symbol", eElement);
 			terms.add(new OnTaxonomyTerm.Builder().ftWsodKey(wsodKey).ftCndCode(ftCode).sedol(sedol).compositeId(compositeId)
-					.tickerSymbol(tickerSymbol).country(country).canonicalName(name).exchangeCountry(exchangeCountry)
+					.tickerCode(tickerCode).country(country).canonicalName(name).exchangeCountry(exchangeCountry).tickerSymbol(tickerSymbol)
 					.build());
 		}
 		return terms;

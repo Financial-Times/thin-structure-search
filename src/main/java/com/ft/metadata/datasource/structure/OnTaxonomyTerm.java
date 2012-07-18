@@ -51,6 +51,7 @@ public class OnTaxonomyTerm implements Resource {
 	private String ftCndCode;
 	private String sedol;
 	private String tickerSymbol;
+	private String tickerCode;
 	private String country;
 	private String type;
 	private String status;
@@ -69,6 +70,7 @@ public class OnTaxonomyTerm implements Resource {
 		this.active = builder.active;
 		this.sedol = builder.sedol;
 		this.tickerSymbol = builder.tickerSymbol;
+		this.tickerCode = builder.tickerCode;
 		this.country = builder.country;
 		this.type = builder.type;
 		this.status = builder.status;
@@ -109,6 +111,11 @@ public class OnTaxonomyTerm implements Resource {
 
 	public String getTickerSymbol() {
 		return tickerSymbol;
+	}
+
+
+	public String getTickerCode() {
+		return tickerCode;
 	}
 
 	public String getCountry() {
@@ -173,12 +180,12 @@ public class OnTaxonomyTerm implements Resource {
 		append(response,CND_CODE_TEMPLATE,CND_CODE_EMPTY,ftCndCode);
 		append(response,SEDOL_TEMPLATE,SEDOL_EMPTY,sedol);
 		append(response,COUNTRY_TEMPLATE,COUNTRY_EMPTY,country);
-		append(response,TICKER_TEMPLATE,TICKER_EMPTY,tickerSymbol);
+		append(response,TICKER_TEMPLATE,TICKER_EMPTY,tickerCode);
+		append(response,SYMBOL_TEMPLATE,SYMBOL_EMPTY, tickerSymbol);
 
 		append(response,TYPE_TEMPLATE,TYPE_EMPTY,type);
 		append(response,STATUS_TEMPLATE,STATUS_EMPTY,status);
 		append(response,ISIN_TEMPLATE,ISIN_EMPTY,isin);
-		append(response,SYMBOL_TEMPLATE,SYMBOL_EMPTY, tickerSymbol);
 		append(response,EXCHANGE_CODE_TEMPLATE,EXCHANGE_CODE_EMPTY,exchangeCode);
 		append(response,EXCHANGE_COUNTRY_TEMPLATE,EXCHANGE_COUNTRY_EMPTY,exchangeCountry);
 		append(response,VERSION_TEMPLATE,VERSION_EMPTY,version);
@@ -205,6 +212,7 @@ public class OnTaxonomyTerm implements Resource {
 		private String ftCndCode;
 		private String sedol;
 		private String tickerSymbol;
+		private String tickerCode;
 		private String country;
 		private String type;
 		private String status;
@@ -251,6 +259,11 @@ public class OnTaxonomyTerm implements Resource {
 
 		public Builder tickerSymbol(final String tickerSymbol){
 			this.tickerSymbol = tickerSymbol;
+			return this;
+		}
+
+		public Builder tickerCode(final String tickerCode){
+			this.tickerCode = tickerCode;
 			return this;
 		}
 
