@@ -62,7 +62,7 @@ public class OnTaxonomyCollectionTest {
 		String resource = new String(resourceIterator.next(0).getContent("UTF-8"), "UTF-8");
 		List<OnTaxonomyTerm> onTaxonomyTerm = buildTermsFromXml(resource);
 
-		assertEquals(onTaxonomyTerm.size(), 6);
+		assertEquals(onTaxonomyTerm.size(), 19);
 		assertEquals(onTaxonomyTerm.get(0).getSedol(), "B0T4LH6");
 		assertEquals(onTaxonomyTerm.get(0).getCanonicalName(), "HICL Infrastructure Co Ltd");
 		assertEquals(onTaxonomyTerm.get(0).getCountry(), "United Kingdom");

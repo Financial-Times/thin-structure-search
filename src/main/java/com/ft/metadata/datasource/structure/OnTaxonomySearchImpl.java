@@ -92,19 +92,13 @@ public class OnTaxonomySearchImpl implements OnTaxonomySearch {
 	private static OnTaxonomyTerm createTerm(final String externalTermId, final NodeList canonicalNames, final NodeList termAttributes, final String compositeId) throws OnTaxonomySearchException {
 		final String canonicalName = extractCanonicalName(externalTermId,canonicalNames);
 		final Map<String, String> attributes = mapAttributes(termAttributes);
-		final String cmrStatus = attributes.get("cmrStatus");
-		final boolean active = cmrStatus != null ? "ACTIVE".equalsIgnoreCase(cmrStatus.trim()) : false;
-		final String isCompany = attributes.get("is-company");
-		final boolean company = isCompany != null ? "Yes".equalsIgnoreCase(isCompany.trim()) : false;
-		if (company && active) {
-			return new OnTaxonomyTerm.Builder().ftWsodKey(attributes.get("ft-wsod-key"))
-					.ftCndCode(attributes.get("ft-code-from-cnd")).sedol(attributes.get("sedol"))
-					.tickerSymbol(attributes.get("ticker-symbol")).country(attributes.get("country"))
-					.tickerCode(attributes.get("ft-wsod-key")).type(attributes.get("Type"))
-					.canonicalName(canonicalName).compositeId(compositeId)
-					.exchangeCountry(attributes.get("exchange-country")).build();
-		}
-		return null;
+
+		return new OnTaxonomyTerm.Builder().ftWsodKey(attributes.get("ft-wsod-key"))
+				.ftCndCode(attributes.get("ft-code-from-cnd")).sedol(attributes.get("sedol"))
+				.tickerSymbol(attributes.get("ticker-symbol")).country(attributes.get("country"))
+				.tickerCode(attributes.get("ft-wsod-key")).type(attributes.get("Type"))
+				.canonicalName(canonicalName).compositeId(compositeId)
+				.exchangeCountry(attributes.get("exchange-country")).build();
 	}
 
 	private static Map<String, String> mapAttributes(final NodeList termAttributes) {
