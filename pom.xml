@@ -12,7 +12,7 @@
 		<artifactId>ft-metadata-parent</artifactId>
 		<version>1.13</version>
 	</parent>
-	
+
 	<properties>
 		<jdkVersion>1.6</jdkVersion>
 	</properties>
@@ -40,7 +40,7 @@
 					<target>${jdkVersion}</target>
 				</configuration>
 			</plugin>
-		</plugins>		
+		</plugins>
 	</build>
 
 	<dependencies>
@@ -50,7 +50,7 @@
 			<artifactId>commons-httpclient</artifactId>
 			<version>3.1</version>
 		</dependency>
-		
+
 		<!-- Library used by the existing CND datasource so Jars should be present -->
 		<dependency>
 			<groupId>log4j</groupId>
@@ -59,14 +59,14 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Library used by the existing CND datasource (and represents Methode's own API) so Jars should be present -->		
+		<!-- Library used by the existing CND datasource (and represents Methode's own API) so Jars should be present -->
 		<dependency>
 			<groupId>verity</groupId>
 			<artifactId>dsm</artifactId>
 			<version>1</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- Test scope so not adding dependencies -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -79,6 +79,11 @@
 			<artifactId>mockito-all</artifactId>
 			<version>1.8.5</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.4</version>
 		</dependency>
 	</dependencies>
 </project>
