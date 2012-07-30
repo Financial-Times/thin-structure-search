@@ -133,7 +133,10 @@ public class OnTaxonomySearchImpl implements OnTaxonomySearch {
 		}
 	}
 
-	public void applyQueryText(final PostMethod post, final String query) throws UnsupportedEncodingException {
+	public void applyQueryText(final PostMethod post, String query) throws UnsupportedEncodingException {
+		if(!query.endsWith("*")) {
+			query = query + "*";
+		}
 		final String requestContent = String.format(CONTENT_WITH_PLACEHOLDER, StringEscapeUtils.escapeXml(query));
 		final RequestEntity requestEntity = new StringRequestEntity(requestContent, APPLICATION_XML, UTF8);
 		post.setRequestEntity(requestEntity);
