@@ -46,7 +46,11 @@ public class OnTaxonomyCollection implements Collection {
 			throw new DSException(String.format("Expected a single query term but received %d",queryArray.length));
 		}
 		try {
-			final String query = queryArray[0].value;
+			String query = queryArray[0].value;
+			if(!query.endsWith("*")) {
+				query = query + "*";
+			}
+
 			terms = taxonomySearch.search(query);
 
 			return new OnTaxonomyTermResourceIterator(terms);

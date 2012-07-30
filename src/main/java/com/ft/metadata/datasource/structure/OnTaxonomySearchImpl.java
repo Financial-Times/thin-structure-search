@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,7 +21,6 @@ import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.methods.RequestEntity;
 import org.apache.commons.httpclient.methods.StringRequestEntity;
-import org.apache.commons.lang.StringEscapeUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -46,6 +46,14 @@ public class OnTaxonomySearchImpl implements OnTaxonomySearch {
 	// @formatter:on
 
 	private final OnTaxonomyDataSource dataSource;
+	private static final Map<String, String> substitutes = new LinkedHashMap<String, String>();
+	static{
+		substitutes.put("&", "&amp;");
+		substitutes.put("<", "&lt;");
+		substitutes.put(">", "&gt;");
+		substitutes.put("\"", "&quot;");
+		substitutes.put("'", "&apos;");
+	}
 
 	public OnTaxonomySearchImpl(final OnTaxonomyDataSource dataSource) {
 		this.dataSource = dataSource;
@@ -133,13 +141,16 @@ public class OnTaxonomySearchImpl implements OnTaxonomySearch {
 		}
 	}
 
-	public void applyQueryText(final PostMethod post, String query) throws UnsupportedEncodingException {
-		if(!query.endsWith("*")) {
-			query = query + "*";
-		}
-		final String requestContent = String.format(CONTENT_WITH_PLACEHOLDER, StringEscapeUtils.escapeXml(query));
+	public void applyQueryText(final PostMethod post, final String query) throws UnsupportedEncodingException {
+		final String requestContent = String.format(CONTENT_WITH_PLACEHOLDER, escapeForXml(query));
 		final RequestEntity requestEntity = new StringRequestEntity(requestContent, APPLICATION_XML, UTF8);
 		post.setRequestEntity(requestEntity);
 	}
 
+	private static String escapeForXml(String content) {
+		for (final Map.Entry<String, String> subs : substitutes.entrySet()){
+			content = content.replaceAll(subs.getKey(), subs.getValue());
+		}
+		return content;
+	}
 }
