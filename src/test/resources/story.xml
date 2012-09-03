@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE doc SYSTEM "src/test/resources/ftpsi.dtd">
+<doc xml:lang="en-uk"><lead id="U10002272329545ct"><lead-headline id="U1000227232954558"><nid-title><ln><?EM-dummyText [Insert news in depth title here]?>
+</ln>
+</nid-title>
+<in-depth-nav-title><ln><?EM-dummyText [Insert in depth nav title here]?>
+</ln>
+</in-depth-nav-title>
+<headline><ln>UK manufacturing output continues to expand</ln>
+</headline>
+<skybox-headline><ln><?EM-dummyText [Insert skybox headline here]?>
+</ln>
+</skybox-headline>
+<triplet-headline><ln><?EM-dummyText [Insert triplet headline here]?>
+</ln>
+</triplet-headline>
+<promobox-title><ln><?EM-dummyText [Insert promobox title here]?>
+</ln>
+</promobox-title>
+<promobox-headline><ln><?EM-dummyText [Insert promobox headline here]?>
+</ln>
+</promobox-headline>
+<editor-choice-headline><ln><?EM-dummyText [Insert editor's choice headline here]?>
+</ln>
+</editor-choice-headline>
+<nav-collection-headline><ln><?EM-dummyText [Insert nav collection headline here]?>
+</ln>
+</nav-collection-headline>
+<in-depth-nav-headline><ln><?EM-dummyText [Insert in depth nav headline here]?>
+</ln>
+</in-depth-nav-headline>
+</lead-headline>
+<web-index-headline><ln><?EM-dummyText [Insert web web-index-headline here]?>
+</ln>
+</web-index-headline>
+<lead-images><web-primary width="272" height="193"/>
+<web-secondary width="167" height="96"/>
+<web-portrait width="55" height="70"/>
+<web-skybox-picture/>
+<web-thumbnail width="55" height="55"/>
+<web-picture/>
+<web-alt-picture/>
+</lead-images>
+<interactive-chart><?EM-dummyText [Insert interactive-chart link  here]?>
+</interactive-chart>
+<web-subhead><p>Growth eases slightly but still beats forecasts</p>
+</web-subhead>
+<web-stand-first><p><?EM-dummyText [Insert web standfirst here]?>
+</p>
+</web-stand-first>
+<lead-text id="U100022723295457jE"><lead-body><p>Preliminary official figures show that production rose by 1.6 per cent in the second quarter, the fastest quarter so far in the recovery, contributing 0.2 percentage points to 1.1 per cent overall GDP growth</p>
+</lead-body>
+<triplet-lead-body><p><?EM-dummyText [Insert triplet lead body body here]?>
+</p>
+</triplet-lead-body>
+<columnist-lead-body><p><?EM-dummyText [Insert columnist lead body body here]?>
+</p>
+</columnist-lead-body>
+<short-body><p>Growth eases slightly but still beats forecasts</p>
+</short-body>
+<skybox-body><p><?EM-dummyText [Insert skybox body here]?>
+</p>
+</skybox-body>
+<promobox-body><p><?EM-dummyText [Insert promobox body here]?>
+</p>
+</promobox-body>
+<triplet-short-body><p><?EM-dummyText [Insert triplet short body here]?>
+</p>
+</triplet-short-body>
+<editor-choice-short-lead-body><p><?EM-dummyText [Insert editor's choice short lead body here]?>
+</p>
+</editor-choice-short-lead-body>
+<nav-collection-short-lead-body><p><?EM-dummyText [Insert nav collection short lead body here]?>
+</p>
+</nav-collection-short-lead-body>
+</lead-text>
+<editor-choice><a href="/FTcom%20Production/Links/Z_Story_Packages/World/Aug%202/UK_econ.dwc?uuid=5568a2f4-9e1c-11df-b377-00144feab49a">/FTcom Production/Links/Z_Story_Packages/World/Aug 2/UK_econ.dwc</a>
+</editor-choice>
+</lead>
+<story><headblock id="U10002272329545xjG"><headline><ln><?EM-dummyText [Headline]?>
+</ln>
+</headline>
+</headblock>
+<text id="U100022723295451XE"><byline>By <author-name>Chris Giles, Economics Editor</author-name>
+</byline>
+<body><p>British manufacturing output continued to grow strongly in July, according to the latest purchasing managers’ index, even though sentiment dipped marginally from June. Cristina Fernández is a person’s name. <company DICoName="LinkedIn Corp" DICoFTMWTickercode="us:LNKD" DICoCOFlag="" DICoSEDOL="B3ZVCQ8" DICoISIN="" DICoFTCode="LCIONRKP00" DICoTickerSymbol="LNKD" DICoTickerExchangeCode="" DICoTickerExchangeCountry="us" Version="">LinkedIn</company>
+</p>
+<p></p>
+<p>Grupo Pão de Açúcar</p>
+<p>bhp</p>
+<p></p>
+<p>The measure of activity edged down to 57.3 from 57.6, still a very high reading that beat City forecasts of a drop to 57.0. <company DICoName="International Business Machines Corp" DICoFTMWTickercode="us:IBM" DICoCOFlag="" DICoSEDOL="2005973" DICoISIN="" DICoFTCode="INTBM00000" DICoTickerSymbol="IBM" DICoTickerExchangeCode="" DICoTickerExchangeCountry="us" Version="">IBM </company>is a company.</p>
+<p>As <company DICoName="American International Group Inc" DICoFTMWTickercode="us:AIG" DICoCOFlag="" DICoSEDOL="2027342" DICoISIN="" DICoFTCode="AMEIG00000" DICoTickerSymbol="AIG" DICoTickerExchangeCode="" DICoTickerExchangeCountry="us" Version="">manufacturing </company>recovers from the deep slump of the recession, these readings are naturally high. The July figure was still not far from the 15-year high of 58.1 reached in May.  Napoléon was a very naughty man. Napoleon. Luxembourg is a very nice city. <company DICoName="Facebook Inc" DICoFTMWTickercode="" DICoCOFlag="" DICoSEDOL="" DICoISIN="" DICoFTCode="FIANCCEB00" DICoTickerSymbol="" DICoTickerExchangeCode="" DICoTickerExchangeCountry="" Version="">Facebook</company>
+</p>
+<p>Economists believe the PMI index, produced by Markit, the research company, is a good, but not perfect, early indicator of manufacturing output, the most volatile part of the economy. <company DICoName="Virgin Media Inc" DICoFTMWTickercode="us:VMED" DICoCOFlag="" DICoSEDOL="B10QL56" DICoISIN="" DICoFTCode="NTLAA00000" DICoTickerSymbol="VMED" DICoTickerExchangeCode="" DICoTickerExchangeCountry="us" Version="">Virgin Media</company>.</p>
+<p>Rob Dobson of <company DICoName="HSBC PLC" DICoFTMWTickercode="" DICoCOFlag="" DICoSEDOL="" DICoISIN="" DICoFTCode="" DICoTickerSymbol="" DICoTickerExchangeCode="" DICoTickerExchangeCountry="" Version="" CompositeId="TnN0ZWluX09OX0FGVE1fT05fMTU1MDcw-T04=">Markit </company>said the July data “suggest that the Virgin Media 2 sector will remain a strong contributor to gross domestic product in the third quarter, raising hopes that growth of the economy may not slow too significantly from <a href="http://www.ft.com/cms/s/0/5a7056ae-9695-11df-9caa-00144feab49a.html" title="FT editorial comment: Bouncing Britain">the 1.1 percent bumper figure</a> already seen for GDP [gross domestic product] in the second quarter”. </p>
+<p>The preliminary official figures show that manufacturing output in the second quarter rose by 1.6 per cent, the fastest quarter so far in the recovery, contributing 0.2 percentage points to the 1.1 per cent overall growth. hsbc apple</p>
+<p>Alan Clarke, of BNP Paribas, said the smaller-than-feared dip showed that British manufacturing “is not losing ground as quickly as some of the other survey indicators globally”.</p>
+<p>But further signs that the export sector is lagging came from another drop in the export orders element of the PMI index, which fell to its lowest level since August 2009. Compensating for the drop in export orders was a rise in domestic new orders, suggesting that momentum in the UK economy remained strong. </p>
+<p>The figures for the UK are not as strong as <a href="http://www.ft.com/cms/s/0/5a7056ae-9695-11df-9caa-00144feab49a.html" title="Eurozone data ease double-dip fears">comparable numbers</a> for Germany, France and the eurozone, which showed a rise in the July PMI index. Largely on the back of extremely strong indicators of output from German factories, the eurozone PMI rose from 55.6 in June to 56.7 in July, a figure that was revised slightly higher from the “flash” estimate released  two weeks ago. </p>
+<p>The UK PMI does not have an equivalent early flash estimate.</p>
+<p>Stuart Green of HSBC said the weak export component, at a time when euro area manufacturing appeared to be powering ahead, would come as a big disappointment to policymakers, who had hoped Britain’s recovery would be fuelled by net trade. </p>
+<p>“The disparity between the overall new order and export order components actually reached a record level in this morning’s survey and policymakers will be paying a good deal of attention to how this dichotomy closes over the coming months, particularly given the recent strengthening of the pound,” he added.</p>
+<p>In a development that will please the Bank of England, which is still nervous about pricing pressures, the components for input and output prices from factories both fell, even though they remained high.  </p>
+<p>Philip Rush of Nomura said: “Price pressures eased slightly, but remained elevated as average purchase prices continued to increase at a substantial pace. Manufacturers were also able to pass some of this increase in costs on to consumers as output prices rose for the ninth month running.” RBS is a bank.</p>
+</body>
+</text>
+</story>
+</doc>
