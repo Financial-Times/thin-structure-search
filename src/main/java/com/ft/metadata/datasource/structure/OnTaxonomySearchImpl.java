@@ -123,8 +123,9 @@ public class OnTaxonomySearchImpl implements OnTaxonomySearch {
 
 	public List<OnTaxonomyTerm> search(final String query) throws OnTaxonomySearchException {
 		final HttpState state = dataSource.createAuthenticationState();
+		PostMethod post = null;
 		try {
-			final PostMethod post = dataSource.createRequest();
+			post = dataSource.createRequest();
 			applyQueryText(post,query);
 			final int status = dataSource.getClient().executeMethod(new HostConfiguration(), post, state);
 			if (status == HttpStatus.SC_OK) {
@@ -138,6 +139,11 @@ public class OnTaxonomySearchImpl implements OnTaxonomySearch {
 			throw new OnTaxonomySearchException("Failed during conversation with service", e);
 		} catch (final IOException e) {
 			throw new OnTaxonomySearchException("Failed during conversation with service", e);
+		}
+		finally {
+			if (post != null) {
+				post.releaseConnection();
+			}
 		}
 	}
 

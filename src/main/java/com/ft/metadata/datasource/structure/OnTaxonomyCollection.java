@@ -1,5 +1,6 @@
 package com.ft.metadata.datasource.structure;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
@@ -60,12 +61,20 @@ public class OnTaxonomyCollection implements Collection {
 		return terms.size();
 	}
 
-	private String convertInputStreamToString(InputStream is) {
-	    try {
-	        return new Scanner(is).useDelimiter("\\A").next();
-	    } catch (java.util.NoSuchElementException e) {
-	        return "";
-	    }
+	private String convertInputStreamToString(InputStream is) throws DSException {
+		String output = "";
+		try {
+			output = new Scanner(is).useDelimiter("\\A").next();
+		}
+		finally {
+			try {
+				is.close();
+			}
+			catch (IOException e) {
+				throw new DSException(e);
+			}
+		}
+		return output;
 	}
 
 	private String getHeader(final String str){
