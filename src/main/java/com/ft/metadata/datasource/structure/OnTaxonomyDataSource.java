@@ -21,8 +21,8 @@ public class OnTaxonomyDataSource implements Datasource {
 	private final HttpClient client = new HttpClient(connectionManager);
 
 	private static final String CLIENT_USER_PRINCIPAL_HEADER = "ClientUserPrincipal";
-	private static final String STRUCTURE_SERVICE_URI_TEMPLATE = "http://%s:%d/%s/1.0/search?inflate=MAX";
-	private static final String DEFAULT_STRUCTURE_SERVICE_PATH = "metadata-services/structure";
+	private static final String STRUCTURE_SERVICE_URI_TEMPLATE = "http://%s:%d/%s/structure/1.0/search?inflate=MAX";
+	private static final String DEFAULT_STRUCTURE_SERVICE_PATH = "metadata-services";
 
 	public static final String REALM_PARAM = "realm";
 	public static final String HOST_PARAM = "host";

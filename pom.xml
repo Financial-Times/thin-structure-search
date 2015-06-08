@@ -5,7 +5,7 @@
 	<artifactId>thin-structure-search</artifactId>
 	<packaging>jar</packaging>
 	<name>Thin Structure Search Client for Methode</name>
-	<version>1.1</version>
+	<version>1.2</version>
 
 	<parent>
 		<groupId>com.ft.metadata</groupId>
