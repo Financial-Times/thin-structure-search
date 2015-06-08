@@ -21,7 +21,8 @@ public class OnTaxonomyDataSource implements Datasource {
 	private final HttpClient client = new HttpClient(connectionManager);
 
 	private static final String CLIENT_USER_PRINCIPAL_HEADER = "ClientUserPrincipal";
-	private static final String STRUCTURE_SERVICE_URI_TEMPLATE = "http://%s:%d/metadata-services/structure/1.0/search?inflate=MAX";
+	private static final String STRUCTURE_SERVICE_URI_TEMPLATE = "http://%s:%d/%s/1.0/search?inflate=MAX";
+	private static final String DEFAULT_STRUCTURE_SERVICE_PATH = "metadata-services/structure";
 
 	public static final String REALM_PARAM = "realm";
 	public static final String HOST_PARAM = "host";
@@ -29,6 +30,7 @@ public class OnTaxonomyDataSource implements Datasource {
 	public static final String USERNAME_PARAM = "username";
 	public static final String PASSWORD_PARAM = "password";
 	public static final String PRINCIPAL_PARAM = "principal";
+	private static final String PATH = "path";
 
 	private final String realm;
 	private final String host;
@@ -36,6 +38,7 @@ public class OnTaxonomyDataSource implements Datasource {
 	private final String username;
 	private final String password;
 	private final String principal;
+	private final String structureServicePath;
 
 	private Map<String, String> initParam;
 
@@ -47,6 +50,8 @@ public class OnTaxonomyDataSource implements Datasource {
 		this.password = params.get(PASSWORD_PARAM);
 		this.principal = params.get(PRINCIPAL_PARAM);
 		this.port = Integer.parseInt(params.get(PORT_PARAM));
+		this.structureServicePath = isStringBlank(params.get(PATH)) ? DEFAULT_STRUCTURE_SERVICE_PATH : params.get(PATH);
+		
 	}
 
 	public Collection getCollection() throws DSException {
@@ -65,7 +70,7 @@ public class OnTaxonomyDataSource implements Datasource {
 	}
 
 	public PostMethod createRequest() throws UnsupportedEncodingException {
-		final PostMethod post = new PostMethod(String.format(STRUCTURE_SERVICE_URI_TEMPLATE, host, port));
+		final PostMethod post = new PostMethod(String.format(STRUCTURE_SERVICE_URI_TEMPLATE, host, port, structureServicePath));
 		post.addRequestHeader(CLIENT_USER_PRINCIPAL_HEADER, principal);
 		return post;
 	}
@@ -78,4 +83,17 @@ public class OnTaxonomyDataSource implements Datasource {
     {
         return initParam;
     }
+	
+	private boolean isStringBlank(final String str) {
+		int strLen;
+        if (str == null || (strLen = str.length()) == 0) {
+            return true;
+        }
+        for (int i = 0; i < strLen; i++) {
+            if ((Character.isWhitespace(str.charAt(i)) == false)) {
+                return false;
+            }
+        }
+        return true;
+	}
 }
